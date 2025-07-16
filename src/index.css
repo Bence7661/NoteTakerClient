@@ -2,7 +2,7 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  margin: 0;
+  margin: 0px;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -12,17 +12,16 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --white: rgb(230, 220, 220);
+  --lightWhite: rgb(170, 160, 160);
+  --extraLightGrey: rgb(65, 65, 65);
+
+  --lightGrey: rgb(50, 50, 50);
+  --lightGreyHover: rgb(40, 40, 40);
+  --lightGreyMouseDown: rgb(35, 35, 35);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+body {
+  margin: 0px;
 }
