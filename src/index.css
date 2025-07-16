@@ -3,6 +3,7 @@
   line-height: 1.5;
   font-weight: 400;
   margin: 0px;
+  box-sizing: border-box;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -24,4 +25,10 @@
 
 body {
   margin: 0px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
