@@ -1,0 +1,33 @@
+h2 {
+    margin: 0;
+}
+
+.card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--lightGrey);
+    width: 24dvw;
+    height: 23dvh;
+    box-shadow: var(--coolBoxShadow);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: var(--lightGrey);
+    width: 22dvw;
+    height: 20dvh;
+    border: 1px solid var(--lightWhite);
+}
+
+.card-container, .card {
+    border-radius: 5px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

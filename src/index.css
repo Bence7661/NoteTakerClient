@@ -14,6 +14,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --coolBoxShadow: 10px 10px 5px rgba(0, 0, 0, 0.330);
+  --subtleBoxShadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.330);
+
   --white: rgb(230, 220, 220);
   --lightWhite: rgb(170, 160, 160);
   --extraLightGrey: rgb(65, 65, 65);
