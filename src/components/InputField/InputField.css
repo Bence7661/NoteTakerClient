@@ -1,0 +1,14 @@
+label {
+    margin-right: 1rem;
+    display: inline-block;
+}
+
+input {
+    background-color: var(--extraLightGrey);
+    border: none;
+    box-shadow: var(--subtleBoxShadow);
+}
+
+input:focus {
+    border: 1px solid var(--white);
+}
