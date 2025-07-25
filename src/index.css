@@ -7,15 +7,16 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--lightBlack);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --coolBoxShadow: 10px 10px 5px rgba(0, 0, 0, 0.330);
-  --subtleBoxShadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.330);
+  --basicBoxShadowRgbA: 0, 0, 0, 0.330;
+  --coolBoxShadow: 10px 10px 5px rgba(var(--basicBoxShadowRgbA));
+  --subtleBoxShadow: 2.5px 2.5px 5px rgba(var(--basicBoxShadowRgbA));
   --validationErrorBoxShadow: 0px 0px 5px 2px rgba(170, 20, 20, 0.330);
 
   --white: rgb(230, 220, 220);
@@ -27,6 +28,9 @@
   --lightGrey: rgb(50, 50, 50);
   --lightGreyHover: rgb(40, 40, 40);
   --lightGreyMouseDown: rgb(35, 35, 35);
+
+  --lightBlack: rgb(36, 36, 36);
+  --lightBlackRgb: 36, 36, 36;
 }
 
 body {

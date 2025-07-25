@@ -1,5 +1,6 @@
 import InputField from "../../components/InputField/InputField";
 import Card from "../../components/Card/Card";
+import Button from "../../components/Button/Button";
 import "./Register.css";
 
 function Register() {
@@ -27,6 +28,7 @@ function Register() {
           {inputFields.map((field) => (
             <InputField key={field.id} {...field}/>
           ))}
+          <Button buttonText="Register"></Button>
         </Card>
       </form>
     </div>
