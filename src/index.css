@@ -19,8 +19,10 @@
 
   --white: rgb(230, 220, 220);
   --lightWhite: rgb(170, 160, 160);
-  --extraLightGrey: rgb(65, 65, 65);
 
+  --validationError: rgb(170, 20, 20);
+
+  --extraLightGrey: rgb(65, 65, 65);
   --lightGrey: rgb(50, 50, 50);
   --lightGreyHover: rgb(40, 40, 40);
   --lightGreyMouseDown: rgb(35, 35, 35);
