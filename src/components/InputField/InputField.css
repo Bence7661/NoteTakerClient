@@ -1,3 +1,11 @@
+.input-field-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 0.25rem;
+}
+
 label {
     margin-right: 1rem;
     display: inline-block;
@@ -11,4 +19,34 @@ input {
 
 input:focus {
     border: 1px solid var(--white);
+}
+
+input.invalid, input.invalid:focus-visible
+{
+    border: 1px solid var(--validationError);
+    box-shadow: var(--validationErrorBoxShadow);
+}
+
+.validation-error {
+    color: var(--validationError);
+    font-size: 0.875rem;
+    align-self: flex-end;
+    padding-right: 1.5rem;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.input-field label {
+  width: 120px;
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+.input-field input {
+  flex: 0.5;
+  padding: 0.5rem;
 }
