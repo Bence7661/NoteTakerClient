@@ -1,14 +1,14 @@
 import "./Card.css";
 
-function Card({title, children}) {
+function Card({children, title = null}) {
   return(
     <>
       <div className="card-container">
         <div className="card">
-          <h2>{title}</h2>
-            <div className="card-body">
-              {children}
-            </div>
+          {title === null ? "" : <h2>{title}</h2>}
+          <div className="card-body">
+            {children}
+          </div>
         </div>
       </div>
     </>
