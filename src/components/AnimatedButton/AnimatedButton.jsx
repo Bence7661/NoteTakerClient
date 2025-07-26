@@ -16,8 +16,8 @@ function AnimatedButton({buttonText = "Button"}) {
   };
 
   return (
-    <div>
-      <button ref={buttonRef} onMouseDown={playAnimation}>
+    <div className="animatedbtn-wrapper">
+      <button className="animatedbtn" ref={buttonRef} onMouseDown={playAnimation}>
           <span>{buttonText}</span>
       </button>
     </div>

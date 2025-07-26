@@ -1,4 +1,4 @@
-button {
+.animatedbtn {
   border-top: 1px solid transparent;
   border-left: 1px solid transparent;
   border-bottom: none;
@@ -11,28 +11,28 @@ button {
   transition: all ease 0.1s;
 }
 
-button span {
+.animatedbtn span {
   transition: all ease 0.1s;
 }
 
-button.pressed, button:active {
+.animatedbtn.pressed, .animatedbtn:active {
   transform: translateY(2.5px);
   box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.440);
   border-top: 1px solid var(--lightBlack);
   border-left: 1px solid var(--lightBlack);
 }
 
-button.pressed span, button:active span {
+.animatedbtn.pressed span, .animatedbtn:active span {
   display: inline-block;
   transform: translateY(-0.5px);
   text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
 }
 
-div, button {
+.animatedbtn-wrapper, .animatedbtn {
   border-radius: 5px;
   width: 100%;
 }
 
-.card-footer div {
+.card-footer .animatedbtn-wrapper {
   box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.440);
 }
