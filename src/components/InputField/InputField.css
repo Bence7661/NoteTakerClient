@@ -37,14 +37,17 @@ input.invalid, input.invalid:focus-visible
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 100%;
     gap: 1rem;
+    align-items: center;
 }
 
 .input-field label {
   color: var(--white);
+  width: 100%;
+  text-align: center;
 }
 
 .input-field input {
-  flex: 0.5;
-  padding: 0.5rem;
+  padding: 0.25rem;
 }
