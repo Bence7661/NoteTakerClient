@@ -1,9 +1,9 @@
 import InputField from "../../components/InputField/InputField";
 import Card from "../../components/Card/Card";
 import AnimatedButton from "../../components/AnimatedButton/AnimatedButton";
-import "./Register.css";
+import "./RegisterForm.css";
 
-function Register() {
+function RegisterForm() {
   const inputFields = [
     {
       id: "usernameInput",
@@ -48,4 +48,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default RegisterForm;

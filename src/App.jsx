@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home/Home.jsx'
 import Notes from './pages/Notes/Notes.jsx'
-import Register from './pages/Register/Register.jsx'
+import Register from './pages/RegisterPage.jsx'
 import NavBar from './components/NavBar/NavBar.jsx'
 
 function App() {
