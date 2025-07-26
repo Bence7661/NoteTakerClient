@@ -29,7 +29,7 @@ function RegisterForm() {
   ];
 
   return (
-    <div className="register-page">
+    <div className="register-form">
       <form>
         <Card 
           title="Registration"
