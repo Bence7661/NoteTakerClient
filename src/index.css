@@ -42,3 +42,21 @@ body {
 *::after {
   box-sizing: border-box;
 }
+
+html * {
+  font-size: 14px;
+}
+
+/* Small devices (phones) */
+@media (min-width: 375px) {
+  html *  {
+    font-size: 12px;
+  }
+}
+
+/* Everything else */
+@media (min-width: 768px) {
+  html *  {
+    font-size: 17px;
+  }
+}

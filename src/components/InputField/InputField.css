@@ -7,7 +7,6 @@
 }
 
 label {
-    margin-right: 1rem;
     display: inline-block;
 }
 
@@ -38,11 +37,10 @@ input.invalid, input.invalid:focus-visible
     display: flex;
     flex-direction: row;
     justify-content: center;
+    gap: 1rem;
 }
 
 .input-field label {
-  width: 120px;
-  font-size: 1.5rem;
   color: var(--white);
 }
 
