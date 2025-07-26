@@ -47,20 +47,32 @@ html * {
   font-size: 14px;
 }
 
-h2 {
+h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-/* Small devices (phones) */
 @media (min-width: 375px) {
-  html *  {
+  html * {
     font-size: 12px;
   }
+
+  h1 { font-size: 2.5rem; } /* 30px */
+  h2 { font-size: 2rem; }   /* 24px */
+  h3 { font-size: 1.75rem; }/* 21px */
+  h4 { font-size: 1.5rem; } /* 18px */
+  h5 { font-size: 1.25rem; }/* 15px */
+  h6 { font-size: 1rem; }   /* 12px */
 }
 
-/* Everything else */
 @media (min-width: 768px) {
-  html *  {
+  html * {
     font-size: 20px;
   }
+
+  h1 { font-size: 3rem; } /* 60px */
+  h2 { font-size: 2.5rem; } /* 50px */
+  h3 { font-size: 2rem; } /* 40px */
+  h4 { font-size: 1.75rem; } /* 35px */
+  h5 { font-size: 1.5rem; } /* 30px */
+  h6 { font-size: 1.25rem; } /* 25px */
 }

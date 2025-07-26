@@ -5,7 +5,7 @@ function Card({bodyContent, footerContent, title = null}) {
     <>
       <div className="card-container">
         <div className="card">
-          {title === null ? "" : <h2 className="card-title">{title}</h2>}
+          {title === null ? "" : <h4 className="card-title">{title}</h4>}
           <div className="card-body">
             {bodyContent}
           </div>
