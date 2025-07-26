@@ -10,20 +10,27 @@ label {
     display: inline-block;
 }
 
-input {
+input, input.invalid:focus-visible {
     background-color: var(--extraLightGrey);
-    border: none;
+    border: 1px transparent;
+    outline: 1px transparent;
     box-shadow: var(--subtleBoxShadow);
 }
 
 input:focus {
-    border: 1px solid var(--white);
+    outline: 1px solid white;
 }
 
-input.invalid, input.invalid:focus-visible
+input.invalid
 {
     border: 1px solid var(--validationError);
     box-shadow: var(--validationErrorBoxShadow);
+}
+
+input.invalid:focus-visible
+{
+    outline: 1px solid white;
+    border: 1px solid white;
 }
 
 .validation-error {
