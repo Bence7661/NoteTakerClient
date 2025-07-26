@@ -7,8 +7,6 @@ h2 {
     align-items: center;
     justify-content: center;
     background-color: var(--lightGrey);
-    min-width: 24dvw;
-    min-height: 23dvh;
     width: fit-content;
     box-shadow: var(--coolBoxShadow);
 }
@@ -18,8 +16,6 @@ h2 {
     flex-direction: column;
     justify-content: space-evenly;
     background-color: var(--lightGrey);
-    min-width: 22dvw;
-    min-height: 20dvh;
     border: 1px solid var(--lightWhite);
 }
 

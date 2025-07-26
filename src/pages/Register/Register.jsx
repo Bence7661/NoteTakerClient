@@ -18,6 +18,13 @@ function Register() {
       type: "password",
       placeholder: "Password",
       required: true,
+    },
+    {
+      id: "confirmPasswordInput",
+      label: "Confirm Password",
+      type: "password",
+      placeholder: "Confirm password",
+      required: true,
     }
   ];
 
