@@ -15,15 +15,24 @@ button span {
   transition: all ease 0.1s;
 }
 
-button:active {
+button.pressed, button:active {
   transform: translateY(2.5px);
   box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.440);
   border-top: 1px solid var(--lightBlack);
   border-left: 1px solid var(--lightBlack);
 }
 
-button:active span {
+button.pressed span, button:active span {
   display: inline-block;
   transform: translateY(-0.5px);
   text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
+}
+
+div, button {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.card-footer div {
+  box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.440);
 }

@@ -1,6 +1,6 @@
 import InputField from "../../components/InputField/InputField";
 import Card from "../../components/Card/Card";
-import Button from "../../components/Button/Button";
+import AnimatedButton from "../../components/AnimatedButton/AnimatedButton";
 import "./Register.css";
 
 function Register() {
@@ -39,7 +39,7 @@ function Register() {
             ))
           }
           footerContent={
-            <Button buttonText="Register"></Button>
+            <AnimatedButton buttonText="Register"></AnimatedButton>
           }
         >
         </Card>
