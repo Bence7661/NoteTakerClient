@@ -1,13 +1,16 @@
 import "./Card.css";
 
-function Card({children, title = null}) {
+function Card({bodyContent, footerContent, title = null}) {
   return(
     <>
       <div className="card-container">
         <div className="card">
-          {title === null ? "" : <h2>{title}</h2>}
+          {title === null ? "" : <h2 className="card-title">{title}</h2>}
           <div className="card-body">
-            {children}
+            {bodyContent}
+          </div>
+          <div className="card-footer">
+            {footerContent}
           </div>
         </div>
       </div>

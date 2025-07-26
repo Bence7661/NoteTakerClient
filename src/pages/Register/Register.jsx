@@ -31,11 +31,17 @@ function Register() {
   return (
     <div className="register-page">
       <form>
-        <Card title="Registration">
-          {inputFields.map((field) => (
-            <InputField key={field.id} {...field}/>
-          ))}
-          <Button buttonText="Register"></Button>
+        <Card 
+          title="Registration"
+          bodyContent={          
+            inputFields.map((field) => (
+              <InputField key={field.id} {...field}/>
+            ))
+          }
+          footerContent={
+            <Button buttonText="Register"></Button>
+          }
+        >
         </Card>
       </form>
     </div>
