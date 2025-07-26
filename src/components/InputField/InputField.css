@@ -10,24 +10,24 @@ label {
     display: inline-block;
 }
 
-input, input.invalid:focus-visible {
+.input-field input, input.invalid:focus-visible {
     background-color: var(--extraLightGrey);
     border: 1px transparent;
     outline: 1px transparent;
     box-shadow: var(--subtleBoxShadow);
 }
 
-input:focus {
+.input-field input:focus {
     outline: 1px solid white;
 }
 
-input.invalid
+.input-field input.invalid
 {
     border: 1px solid var(--validationError);
     box-shadow: var(--validationErrorBoxShadow);
 }
 
-input.invalid:focus-visible
+.input-field input.invalid:focus-visible
 {
     outline: 1px solid white;
     border: 1px solid white;

@@ -47,6 +47,10 @@ html * {
   font-size: 14px;
 }
 
+h2 {
+  margin: 0;
+}
+
 /* Small devices (phones) */
 @media (min-width: 375px) {
   html *  {
