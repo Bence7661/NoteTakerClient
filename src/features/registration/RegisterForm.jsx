@@ -3,7 +3,12 @@ import InputField from "../../components/InputField/InputField";
 import Card from "../../components/Card/Card";
 import AnimatedButton from "../../components/AnimatedButton/AnimatedButton";
 import { useState } from "react";
+import { Validate } from "./RegisterFormValidator"
 
+//Needs e-mail field.
+//Needs username and e-mail validation (see if taken)
+//I might only implement that server side.
+//Though for practice I want to do calls to BE while typing.
 function RegisterForm() {
   const [formData, setFormData] = useState({
     username: "",
@@ -11,42 +16,30 @@ function RegisterForm() {
     confirmPassword: ""
   });
   const [errors, setErrors] = useState({});
-
-  const handleChange = (e) => {
+  const onChangeDelegate = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }))
   };
 
-  const validate = () => {
-    const newErrors = {};
-    if (!formData.username.trim()) newErrors.username = "Required";
-
-    console.log(!formData.password)
-    console.log(formData.password.length < 6)
-    if (!formData.password) {
-      newErrors.password = "Required";
-    }
-    else if (formData.password.length < 6) {
-      newErrors.password = "Min 6 characters";
-    }
-
-    if (!formData.confirmPassword) {
-      newErrors.confirmPassword = "Required";
-    }
-    else if (formData.confirmPassword != formData.password) {
-      newErrors.confirmPassword = "Must match password";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  }
-
-  const handleSubmit = (e) => {
+  const onSubmitDelegate = (e) => {
     e.preventDefault();
-    if (validate()){
-      console.log("? Valid:", formData)
+    const validationResult = Validate(formData);
+    if (validationResult.length === 0) {
+      //CALL SERVER
+      console.log("Valid:", formData)
+    }
+    else {
+      setErrors(validationResult);
     }
   };
+
+  const onBlurDelegate = (e) => {
+    const { name } = e.target;
+    setErrors(prev => ({
+      ...prev,
+      [name]: Validate(formData, name)[name]
+    }))
+  }
 
   const inputFields = [
     {
@@ -56,7 +49,8 @@ function RegisterForm() {
       placeholder: "Username",
       value: formData.username,
       error: errors.username,
-      onChange: handleChange
+      onChange: onChangeDelegate,
+      onBlur: onBlurDelegate
     },
     {
       id: "password",
@@ -65,7 +59,8 @@ function RegisterForm() {
       placeholder: "Password",
       value: formData.password,
       error: errors.password,
-      onChange: handleChange
+      onChange: onChangeDelegate,
+      onBlur: onBlurDelegate
     },
     {
       id: "confirmPassword",
@@ -74,22 +69,23 @@ function RegisterForm() {
       placeholder: "Confirm password",
       value: formData.confirmPassword,
       error: errors.confirmPassword,
-      onChange: handleChange
+      onChange: onChangeDelegate,
+      onBlur: onBlurDelegate
     }
   ];
 
   return (
     <div className="register-form">
-      <form onSubmit={handleSubmit}>
-        <Card 
+      <form onSubmit={onSubmitDelegate}>
+        <Card
           title="Registration"
-          bodyContent={          
+          bodyContent={
             inputFields.map((field) => (
-              <InputField key={field.id} {...field}/>
+              <InputField key={field.id} {...field} />
             ))
           }
           footerContent={
-            <AnimatedButton buttonText="Register" type="submit"/>
+            <AnimatedButton buttonText="Register" type="submit" />
           }
         >
         </Card>
