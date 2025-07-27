@@ -1,2 +1,6 @@
-const User = "user";
-const SidePaneState = "sidePaneOpen";
+const StorageKeys = {
+  User: "user",
+  SidePaneState: "sidePaneOpen",
+};
+
+export default StorageKeys
