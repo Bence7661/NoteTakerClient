@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
 import "./InputField.css";
+import { useRef, useState } from "react";
 
 function InputField({id, label, type = "text", placeholder = "", required = false, pattern = null}) {
     const [value, setValue] = useState("");

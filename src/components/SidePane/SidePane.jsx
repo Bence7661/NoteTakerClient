@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import "./SidePane.css";
+import { useEffect, useState } from "react";
 import { SlArrowRight } from "react-icons/sl";
 import { SlArrowLeft } from "react-icons/sl";
 import StorageKeys from "../../StorageKeys.js"

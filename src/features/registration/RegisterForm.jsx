@@ -1,7 +1,7 @@
+import "./RegisterForm.css";
 import InputField from "../../components/InputField/InputField";
 import Card from "../../components/Card/Card";
 import AnimatedButton from "../../components/AnimatedButton/AnimatedButton";
-import "./RegisterForm.css";
 
 function RegisterForm() {
   const inputFields = [

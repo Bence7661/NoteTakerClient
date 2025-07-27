@@ -1,5 +1,5 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home/Home.jsx'
 import Notes from './pages/Notes/Notes.jsx'
 import Register from './pages/RegisterPage.jsx'

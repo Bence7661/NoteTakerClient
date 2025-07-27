@@ -1,5 +1,5 @@
-import {useRef} from "react"
 import "./AnimatedButton.css";
+import {useRef} from "react"
 
 function AnimatedButton({buttonText = "Button"}) {
   const buttonRef = useRef(null);
