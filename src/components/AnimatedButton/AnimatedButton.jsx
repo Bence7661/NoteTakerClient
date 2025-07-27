@@ -1,7 +1,7 @@
 import "./AnimatedButton.css";
 import {useRef} from "react"
 
-function AnimatedButton({buttonText = "Button"}) {
+function AnimatedButton({buttonText = "Button", type = "button", onClick = null}) {
   const buttonRef = useRef(null);
 
   const playAnimation = () => {
@@ -17,8 +17,13 @@ function AnimatedButton({buttonText = "Button"}) {
 
   return (
     <div className="animatedbtn-wrapper">
-      <button className="animatedbtn" ref={buttonRef} onMouseDown={playAnimation}>
-          <span>{buttonText}</span>
+      <button 
+      className="animatedbtn"
+      type={type}
+      ref={buttonRef} 
+      onMouseDown={playAnimation}
+      onClick={onClick}>
+        <span>{buttonText}</span>
       </button>
     </div>
   );
