@@ -1,34 +1,22 @@
 import "./InputField.css";
-import { useRef, useState } from "react";
 
-function InputField({id, label, type = "text", placeholder = "", required = false, pattern = null}) {
-    const [value, setValue] = useState("");
-    const [isValid, setIsValid] = useState(true); //So validation error is not shown initially.
-    const inputRef = useRef(null);
-    
+function InputField({id, label, type = "text", placeholder = null, value = null, error = null, onChange = null}) {
+    const isValid = error == null;
     const validationErrorVisibility = isValid ? "hidden" : "visible";
     const labelId = `${id}label`;
 
-    const onChange = (e) => {
-        e.preventDefault();
-        setValue(e.target.value);
-        setIsValid(inputRef.current.checkValidity());
-    }
-
     return (
         <div className="input-field-container">
-            <span className="validation-error" style={{visibility:validationErrorVisibility}}>This field is required</span>
+            <span className="validation-error" style={{visibility:validationErrorVisibility}}>{error ?? "error"}</span>
             <div className="input-field">
                 <label id={labelId}>{label}</label>
                 <input
                     className={isValid ? null : "invalid"}
-                    ref={inputRef}
-                    id={id} 
+                    id={id}
+                    name={id}
                     type={type} 
                     placeholder={placeholder}
                     aria-labelledby={labelId}
-                    required={required}
-                    pattern={pattern}
                     value={value}
                     onChange={onChange}
                 />
