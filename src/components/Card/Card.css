@@ -21,8 +21,8 @@
     height: fit-content;
 }
 
-.card-body {
-    margin-bottom: 2rem;
+.card-footer {
+    margin-top: 2rem;
 }
 
 .card-body, .card-footer {

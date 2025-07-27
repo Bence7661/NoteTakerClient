@@ -1,6 +1,6 @@
 import "./Card.css";
 
-function Card({bodyContent, footerContent, title = null}) {
+function Card({bodyContent, footerContent = null, title = null}) {
   return(
     <>
       <div className="card-container">
@@ -9,9 +9,12 @@ function Card({bodyContent, footerContent, title = null}) {
           <div className="card-body">
             {bodyContent}
           </div>
-          <div className="card-footer">
-            {footerContent}
-          </div>
+          {
+            footerContent === null ? "" : 
+            <div className="card-footer">
+              {footerContent}
+            </div>
+          }
         </div>
       </div>
     </>
