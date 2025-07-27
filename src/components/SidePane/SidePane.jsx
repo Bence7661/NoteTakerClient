@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import "./SidePane.css";
+import { SlArrowRight } from "react-icons/sl";
+import { SlArrowLeft } from "react-icons/sl";
 
 function SidePane() {
     const [open, setOpen] = useState(() => {
@@ -19,7 +21,7 @@ function SidePane() {
             onClick={() => setOpen(!open)}
             className="side-pane-toggle"
         >
-            {open ? "<" : ">"}
+            {open ? <SlArrowLeft/> : <SlArrowRight/>}
         </button>
     </div>
   );
