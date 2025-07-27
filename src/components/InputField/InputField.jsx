@@ -1,6 +1,6 @@
 import "./InputField.css";
 
-function InputField({id, label, type = "text", placeholder = null, value = null, error = null, onChange = null}) {
+function InputField({id, label, type = "text", placeholder = null, value = null, error = null, onChange = null, onBlur = null}) {
     const isValid = error == null;
     const validationErrorVisibility = isValid ? "hidden" : "visible";
     const labelId = `${id}label`;
@@ -19,6 +19,7 @@ function InputField({id, label, type = "text", placeholder = null, value = null,
                     aria-labelledby={labelId}
                     value={value}
                     onChange={onChange}
+                    onBlur={onBlur}
                 />
             </div>
         </div>
