@@ -25,6 +25,10 @@
     margin-top: 2rem;
 }
 
+.card-body {
+    gap: 0.5rem;
+}
+
 .card-body, .card-footer {
     display: flex;
     flex-direction: column;
