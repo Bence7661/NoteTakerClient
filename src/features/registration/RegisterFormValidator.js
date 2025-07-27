@@ -1,6 +1,6 @@
 export function Validate(formData, onlyThisField = null) {
     if (formData == null) {
-        console.log("No data passed to validation!");
+        console.error("No data passed to validation!");
         return;
     }
     const errors = [];
