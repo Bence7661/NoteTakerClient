@@ -2,15 +2,16 @@ import { useEffect, useState } from "react";
 import "./SidePane.css";
 import { SlArrowRight } from "react-icons/sl";
 import { SlArrowLeft } from "react-icons/sl";
+import StorageKeys from "../../StorageKeys.js"
 
 function SidePane() {
     const [open, setOpen] = useState(() => {
-        const stored = localStorage.getItem("sidePaneOpen");
+        const stored = localStorage.getItem(StorageKeys.SidePaneState);
         return stored !== null ? JSON.parse(stored) : true;
     });
 
     useEffect(() => {
-        localStorage.setItem("sidePaneOpen", JSON.stringify(open));
+        localStorage.setItem(StorageKeys.SidePaneState, JSON.stringify(open));
     }, [open]);
 
   return (
