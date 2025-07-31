@@ -37,12 +37,13 @@ function RegisterForm() {
   const onSubmitDelegate = (e) => {
     e.preventDefault();
     const validationResult = Validate(formData);
-    if (Object.keys(validationResult) === 0) {
-      //CALL SERVER
-      console.log("Valid:", formData)
+
+    if (validationResult.failed) {
+      setErrors(validationResult.errors);
     }
     else {
-      setErrors(validationResult);
+      //CALL SERVER
+      console.log("Valid:", formData)
     }
   };
 
@@ -50,7 +51,7 @@ function RegisterForm() {
     const { name } = e.target;
     setErrors(prev => ({
       ...prev,
-      [name]: Validate(formData, name)[name]
+      [name]: Validate(formData, name).errors[name]
     }))
   }
 

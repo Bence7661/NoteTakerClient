@@ -5,82 +5,101 @@ export function Validate(formData, onlyThisField = null) {
         console.error("No data passed to validation!");
         return;
     }
-    const errors = {};
+
+    const validationResult = {
+        errors: {},
+        failed: false
+    };
 
     switch (onlyThisField) {
         case "username":
             ValidateUsernameField(
                 formData.username,
-                errors
+                validationResult
             );
             break;
         case "email":
             ValidateEmailField(
                 formData.email,
-                errors
+                validationResult
             );
             break;
         case "password":
             ValidatePasswordField(
                 formData.password,
-                errors
+                validationResult
             );
             break;
         case "confirmPassword":
             ValidateConfirmPasswordField(
                 formData.confirmPassword,
                 formData.password,
-                errors
+                validationResult
             );
             break;
         default:
             ValidateUsernameField(
                 formData.username,
-                errors
+                validationResult
             );
             ValidateEmailField(
                 formData.email,
-                errors
+                validationResult
             );
             ValidatePasswordField(
                 formData.password,
-                errors
+                validationResult
             );
             ValidateConfirmPasswordField(
                 formData.confirmPassword,
                 formData.password,
-                errors
+                validationResult
             );
             break;
     }
 
-    return errors;
+    return validationResult;
 }
 
-function ValidateUsernameField(username, errors) {
-    if (!username.trim()) errors.username = "Required";
+function ValidateUsernameField(username, validationResult) {
+    if (!username.trim()) {
+        validationResult.errors.username = "Required";
+        validationResult.failed = true;
+    }
 }
 
-function ValidateEmailField(email, errors) {
+function ValidateEmailField(email, validationResult) {
     if (!email.trim()) {
-        errors.email = "Required";
+        validationResult.errors.email = "Required";
+        validationResult.failed = true;
         return;
     }
-    if (!emailFormatRegex.test(email)) errors.email = "Invalid format";
+    if (!emailFormatRegex.test(email)) {
+        validationResult.errors.email = "Invalid format";
+        validationResult.failed = true;
+    }
 }
 
-function ValidatePasswordField(password, errors) {
+function ValidatePasswordField(password, validationResult) {
     if (!password) {
-        errors.password = "Required";
+        validationResult.errors.password = "Required";
+        validationResult.failed = true;
         return;
     }
-    if (password.length < 6) errors.password = "Min 6 characters";
+    if (password.length < 6) {
+        validationResult.errors.password = "Min 6 characters";
+        validationResult.failed = true;
+    }
 }
 
-function ValidateConfirmPasswordField(confirmPassword, password, errors) {
+function ValidateConfirmPasswordField(confirmPassword, password, validationResult) {
     if (!confirmPassword) {
-        errors.confirmPassword = "Required";
+        validationResult.errors.confirmPassword = "Required";
+        validationResult.failed = true;
         return;
     }
-    if (confirmPassword != password) errors.confirmPassword = "Must match password";
+    if (confirmPassword != password) {
+        validationResult.errors.confirmPassword = "Must match password";
+        validationResult.failed = true;
+    }
 }
