@@ -12,6 +12,7 @@ import { Validate } from "./RegisterFormValidator"
 function RegisterForm() {
   const [formData, setFormData] = useState({
     username: "",
+    email: "",
     password: "",
     confirmPassword: ""
   });
@@ -61,6 +62,16 @@ function RegisterForm() {
       placeholder: "Username",
       value: formData.username,
       error: errors.username,
+      onChange: onChangeDelegate,
+      onBlur: onBlurDelegate
+    },
+    {
+      id: "email",
+      label: "Email",
+      type: "text",
+      placeholder: "Email",
+      value: formData.email,
+      error: errors.email,
       onChange: onChangeDelegate,
       onBlur: onBlurDelegate
     },

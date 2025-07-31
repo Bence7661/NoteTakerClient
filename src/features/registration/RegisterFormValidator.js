@@ -1,14 +1,22 @@
+const emailFormatRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export function Validate(formData, onlyThisField = null) {
     if (formData == null) {
         console.error("No data passed to validation!");
         return;
     }
-    const errors = [];
+    const errors = {};
 
     switch (onlyThisField) {
         case "username":
             ValidateUsernameField(
                 formData.username,
+                errors
+            );
+            break;
+        case "email":
+            ValidateEmailField(
+                formData.email,
                 errors
             );
             break;
@@ -30,6 +38,10 @@ export function Validate(formData, onlyThisField = null) {
                 formData.username,
                 errors
             );
+            ValidateEmailField(
+                formData.email,
+                errors
+            );
             ValidatePasswordField(
                 formData.password,
                 errors
@@ -49,20 +61,26 @@ function ValidateUsernameField(username, errors) {
     if (!username.trim()) errors.username = "Required";
 }
 
+function ValidateEmailField(email, errors) {
+    if (!email.trim()) {
+        errors.email = "Required";
+        return;
+    }
+    if (!emailFormatRegex.test(email)) errors.email = "Invalid format";
+}
+
 function ValidatePasswordField(password, errors) {
     if (!password) {
         errors.password = "Required";
+        return;
     }
-    else if (password.length < 6) {
-        errors.password = "Min 6 characters";
-    }
+    if (password.length < 6) errors.password = "Min 6 characters";
 }
 
 function ValidateConfirmPasswordField(confirmPassword, password, errors) {
     if (!confirmPassword) {
         errors.confirmPassword = "Required";
+        return;
     }
-    else if (confirmPassword != password) {
-        errors.confirmPassword = "Must match password";
-    }
+    if (confirmPassword != password) errors.confirmPassword = "Must match password";
 }
