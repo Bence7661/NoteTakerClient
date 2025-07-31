@@ -16,9 +16,21 @@ function RegisterForm() {
     confirmPassword: ""
   });
   const [errors, setErrors] = useState({});
+
   const onChangeDelegate = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }))
+    setFormData(prev => ({
+      ...prev,
+      [name]: value.trim()
+    }))
+  };
+
+  const onChangePasswordFieldDelegate = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
   };
 
   const onSubmitDelegate = (e) => {
@@ -59,7 +71,7 @@ function RegisterForm() {
       placeholder: "Password",
       value: formData.password,
       error: errors.password,
-      onChange: onChangeDelegate,
+      onChange: onChangePasswordFieldDelegate,
       onBlur: onBlurDelegate
     },
     {
@@ -69,7 +81,7 @@ function RegisterForm() {
       placeholder: "Confirm password",
       value: formData.confirmPassword,
       error: errors.confirmPassword,
-      onChange: onChangeDelegate,
+      onChange: onChangePasswordFieldDelegate,
       onBlur: onBlurDelegate
     }
   ];
