@@ -24,7 +24,7 @@ function RegisterForm() {
   const onSubmitDelegate = (e) => {
     e.preventDefault();
     const validationResult = Validate(formData);
-    if (validationResult.length === 0) {
+    if (Object.keys(validationResult) === 0) {
       //CALL SERVER
       console.log("Valid:", formData)
     }
